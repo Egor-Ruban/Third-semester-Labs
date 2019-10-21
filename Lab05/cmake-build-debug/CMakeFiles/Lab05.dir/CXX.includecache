@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/old_g/CLionProjects/Lab05/BoolMatrix.cpp
+BoolMatrix.h
+C:/Users/old_g/CLionProjects/Lab05/BoolMatrix.h
+
+C:/Users/old_g/CLionProjects/Lab05/BoolMatrix.h
+BoolVector.h
+C:/Users/old_g/CLionProjects/Lab05/BoolVector.h
+
+C:/Users/old_g/CLionProjects/Lab05/BoolVector.h
+xstring
+-
+iostream
+-
+
