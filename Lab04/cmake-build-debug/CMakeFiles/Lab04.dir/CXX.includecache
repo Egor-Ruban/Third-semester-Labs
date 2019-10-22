@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/old_g/CLionProjects/Lab04/Array.h
+stdlib.h
+-
+iostream
+-
+
+C:/Users/old_g/CLionProjects/Lab04/SortArray.cpp
+Array.h
+C:/Users/old_g/CLionProjects/Lab04/Array.h
+
