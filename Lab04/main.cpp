@@ -12,7 +12,7 @@ int main() {
     int arr1[10] = {9,6,7,3,5,1,4,2,8,10};
 
     //Array nums1(arr1,10);
-    Array nums1(50000,Array::DISORD,100000);
+    Array nums1(5000,Array::DISORD,1000);
     //std::cout<<nums1<<std::endl;
     //Array nums(arr,8);
     //nums;

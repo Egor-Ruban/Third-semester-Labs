@@ -124,16 +124,19 @@ void Array::HeapSort(){
 
 void Array::sift(int i,int n) {
     int max;
+    int x = arr[i];
     while((2*i+1)<=n) {
-        if(i*2+1==n)  max = i*2+1;
-        else if(arr[i*2+1]>arr[i*2+2]) max = i*2+1;
-        else max = i*2+2;
-        if(arr[i]<arr[max]){
-            int temp = arr[i];
-            arr[i]=arr[max];
-            arr[max]=temp;
+        max = i*2+1;
+        if(i*2+2<n) {
+            if(arr[i*2+2]>arr[i*2+1]) max = i*2+2;
+        }
+
+        if(x<arr[max]){
+            arr[i] = arr[max];
             i=max;
-        } else return;
+        } else break;
     }
+    arr[i]=x;
 }
+
 
