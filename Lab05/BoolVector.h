@@ -12,7 +12,7 @@
 class BoolVector {
     friend class BoolMatrix;
 private:
-    int* arr;
+    unsigned int* arr;
     int lenw;
     int lenb;
 public:
@@ -24,13 +24,28 @@ public:
 
     virtual void Log();
     int TakeBool(int i) const;
+    void setBool(int i, int bit);
     void setEmpty();
+    void fillRandomly();
+    int getWeight();
     int operator [] (int index);
     BoolVector& operator = (const BoolVector& obj);
     bool operator == (const BoolVector &obj);
     bool operator != (const BoolVector &obj);
     friend std::istream& operator >> (std::istream &in, BoolVector& obj);
     friend std::ostream& operator<<(std::ostream &out,const BoolVector &obj);
+
+    BoolVector operator & (BoolVector& obj);
+    BoolVector operator | (BoolVector& obj);
+    BoolVector operator ~ ();
+
+    BoolVector operator & (BoolVector obj);
+
+    void operator |=(BoolVector& obj);
+
+    BoolVector operator << (int i);
+    BoolVector operator >> (int i);
+
 
 private:
     int TakeBool(int base, int pos);

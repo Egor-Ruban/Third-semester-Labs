@@ -16,14 +16,18 @@ public:
     BoolMatrix();
     explicit BoolMatrix(int size);
     BoolMatrix(int sizeX, int sizeZ);
+    BoolMatrix(int sizeX, int sizeZ, bool isEmpty);
     ~BoolMatrix();
 
     BoolMatrix& operator = (const BoolMatrix& obj);
     bool operator == (const BoolMatrix &obj);
     bool operator != (const BoolMatrix &obj);
+    BoolVector& operator [] (int i);
+
     friend std::istream& operator >> (std::istream &in, BoolMatrix& obj);
     friend std::ostream& operator<<(std::ostream &out,const BoolMatrix &obj);
     void Log();
+    BoolMatrix& parsePairs(int **Pairs, int n, int size);
 
     int* topologicalSort();
 private:

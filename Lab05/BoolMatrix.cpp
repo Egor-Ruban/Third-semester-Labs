@@ -7,6 +7,7 @@
 BoolMatrix::~BoolMatrix() {
     if (vectors!= NULL) {
         delete[](vectors);
+        vectors = NULL;
     }
 }
 
@@ -46,6 +47,23 @@ BoolMatrix::BoolMatrix(int sizeX,int sizeZ) {
         vectors[i] = vec1;
     }
 }
+
+BoolMatrix::BoolMatrix(int sizeX,int sizeZ,bool isEmpty) {
+    if(!isEmpty){
+        BoolMatrix(sizeX,sizeZ);
+    } else {
+        BoolVector vec(this-> sizeX = sizeX);
+        vectors = new BoolVector[this->sizeZ = sizeZ];
+        vectors[0] = vec;
+        vectors[0].setEmpty();
+        for(int i = 1; i<sizeZ;i++){
+            BoolVector vec1(sizeX);
+            vectors[i] = vec1;
+            vectors[i].setEmpty();
+        }
+    }
+}
+
 
 BoolMatrix& BoolMatrix::operator = (const BoolMatrix& obj){
     if(this!=&obj) {
@@ -112,33 +130,59 @@ void BoolMatrix::Log(){
 }
 
 int* BoolMatrix::topologicalSort(){
-    int* result = new int[this->sizeX];
-    int finished = 0;
-    int checker = 0;
-    int* A = new int[this->sizeX];
-    for(int i = 0; i<sizeX;i++) A[i] = 0;
-    while(finished<sizeX){
-        int checker1 = 0;
+    int* result = new int[this->sizeX]; //result - результирующий массив
+    int workingIndex = 0;
+
+    BoolVector isColumnDeleted(this->sizeX);
+
+    BoolVector disVectors(this->sizeX);
+    for(int i = 0; i<sizeZ;i++){
+        disVectors|=vectors[i];
+    }
+
+    while(workingIndex<sizeX){
+        int isColumnFounded = 0;
+
+        BoolVector emptyColumns(this->sizeX);
+        emptyColumns = (~disVectors)&(~isColumnDeleted);
+
         for(int i = 0; i<sizeX;i++){
-            if(A[i]==0){
-                checker = 0;
-                for(int j = 0;j<sizeX;j++){
-                    if(vectors[j].TakeBool(i)) checker++;
-                }
-                if(checker==0){
-                    checker1++;
-                    A[i]++;
-                    vectors[i].setEmpty();
-                    result[finished]=i;
-                    finished++;
-                }
+            if(emptyColumns[i]==1){
+                isColumnFounded++;
+                isColumnDeleted.setBool(i,1);
+                vectors[i].setEmpty();
+                result[workingIndex]=i;
+                workingIndex++;
             }
         }
-        if(checker1==0){
+
+        if(isColumnFounded==0){
             std::cout<<"Not Found"<<std::endl;
             return result;
         }
+
     }
-    for(int i = 0; i<sizeX;i++) std::cout<<result[i];
     return result;
+}
+
+BoolMatrix& BoolMatrix::parsePairs(int **Pairs,int n, int size) {
+    //считается, что вершины нумеруются с единицы
+    for(int i = 0;i<size;i++){
+        vectors[i].setEmpty();
+    }
+    //Log();
+    for(int i = 0;i<n;i++){
+        vectors[Pairs[i][0]-1].setBool(Pairs[i][1] - 1,1);
+        //BM.vectors[Pairs[i][0] - 1].Log();
+    }
+   // Log();
+    return *this;
+}
+
+BoolVector& BoolMatrix::operator [] (int i){
+    if(i>sizeZ||i<0){
+        std::cout<<"throw ex \"out of border\""<<std::endl;
+        return vectors[0];
+    }
+    return vectors[i];
 }
