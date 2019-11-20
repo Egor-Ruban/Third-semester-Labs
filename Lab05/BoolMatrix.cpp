@@ -135,19 +135,18 @@ int* BoolMatrix::topologicalSort(){
 
     BoolVector isColumnDeleted(this->sizeX);
 
-    BoolVector disVectors(this->sizeX);
-    for(int i = 0; i<sizeZ;i++){
-        disVectors|=vectors[i];
-    }
+    //isColumnDeleted.Log();
 
     while(workingIndex<sizeX){
         int isColumnFounded = 0;
 
-        BoolVector emptyColumns(this->sizeX);
-        emptyColumns = (~disVectors)&(~isColumnDeleted);
+        BoolVector disVectors(this->sizeX);
+        for(int i = 0; i<sizeZ;i++){
+            disVectors=disVectors | vectors[i];
+        }
 
         for(int i = 0; i<sizeX;i++){
-            if(emptyColumns[i]==1){
+            if(disVectors[i]==0 && isColumnDeleted[i]==0){
                 isColumnFounded++;
                 isColumnDeleted.setBool(i,1);
                 vectors[i].setEmpty();
@@ -162,6 +161,10 @@ int* BoolMatrix::topologicalSort(){
         }
 
     }
+    for(int i = 0; i<sizeX;i++){
+        std::cout<<result[i]+1;
+    }
+    std::cout<<std::endl;
     return result;
 }
 

@@ -131,20 +131,26 @@ std::ostream& operator<<(std::ostream &out, const Array &obj){
 }
 
 bool Array::isOrdered(int type){
-    int counter = 0;
+    //int counter = 0;
     switch(type){
         case ORD_BY_INC:
             for(int i = 0; i<size-1; i++){
-                if(arr[i]<=arr[i+1]) counter++;
+                if(arr[i]>arr[i+1]){
+                    //std::cout << i << " is i, " << i + 1 << " is i+1, " << arr[i] << " is arr[i], " << arr[i + 1] <<" is arr[i+1], "<< std::endl;
+                    return false;
+                }
             }
             break;
         case ORD_BY_DEC:
-            for(int i = 0; i<size-1; i++){
-                if(arr[i]>=arr[i+1]) counter++;
+            for(int i = 0; i<size-1; i++) {
+                if (arr[i] < arr[i + 1]) {
+                    //std::cout << i << " " << i + 1 << " " << arr[i] << " " << arr[i + 1] << std::endl;
+                    return false;
+                }
+                break;
             }
-            break;
     }
-    return counter == size-1;
+    return true;
 }
 
 Array& Array::Log(){

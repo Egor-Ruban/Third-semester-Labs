@@ -12,7 +12,13 @@ stdlib.h
 iostream
 -
 
-C:/Users/old_g/CLionProjects/Lab04/SortArray.cpp
+C:/Users/old_g/CLionProjects/Lab04/main.cpp
 Array.h
 C:/Users/old_g/CLionProjects/Lab04/Array.h
+iostream
+-
+ctime
+-
+chrono
+-
 

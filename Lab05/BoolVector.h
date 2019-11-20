@@ -19,6 +19,8 @@ public:
     BoolVector(std::string S);
     explicit BoolVector(int len);
     BoolVector();
+    BoolVector(BoolVector& sample);
+
 
     ~BoolVector();
 
@@ -39,9 +41,9 @@ public:
     BoolVector operator | (BoolVector& obj);
     BoolVector operator ~ ();
 
-    BoolVector operator & (BoolVector obj);
 
     void operator |=(BoolVector& obj);
+    void operator &=(BoolVector& obj);
 
     BoolVector operator << (int i);
     BoolVector operator >> (int i);

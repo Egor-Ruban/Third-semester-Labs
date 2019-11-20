@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/old_g/CLionProjects/Lab05/BoolVector.cpp
+C:/Users/old_g/CLionProjects/Lab05/BoolMatrix.h
 BoolVector.h
 C:/Users/old_g/CLionProjects/Lab05/BoolVector.h
 
@@ -14,5 +14,17 @@ C:/Users/old_g/CLionProjects/Lab05/BoolVector.h
 xstring
 -
 iostream
+-
+
+C:/Users/old_g/CLionProjects/Lab05/main.cpp
+iostream
+-
+BoolVector.h
+C:/Users/old_g/CLionProjects/Lab05/BoolVector.h
+BoolMatrix.h
+C:/Users/old_g/CLionProjects/Lab05/BoolMatrix.h
+stdlib.h
+-
+ctime
 -
 

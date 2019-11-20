@@ -11,11 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd11bb2f-c057-4bad-8e3d-c168f47e33f3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/BoolMatrix.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/BoolMatrix.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BoolVector.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/BoolVector.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BoolVector.h" beforeDir="false" afterPath="$PROJECT_DIR$/BoolVector.h" afterDir="false" />
-    </list>
+    <list default="true" id="cd11bb2f-c057-4bad-8e3d-c168f47e33f3" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +82,8 @@
       <workItem from="1572024454263" duration="1873000" />
       <workItem from="1572573653658" duration="564000" />
       <workItem from="1572682903895" duration="1875000" />
-      <workItem from="1573108517947" duration="8609000" />
+      <workItem from="1573108517947" duration="14425000" />
+      <workItem from="1574260611780" duration="265000" />
     </task>
     <task id="LOCAL-00001" summary="added second version of topological sort">
       <created>1573115574887</created>
@@ -95,7 +92,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573115574887</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="operations with bool vector is not working">
+      <created>1574260778650</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1574260778650</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,6 +120,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added second version of topological sort" />
-    <option name="LAST_COMMIT_MESSAGE" value="added second version of topological sort" />
+    <MESSAGE value="operations with bool vector is not working" />
+    <option name="LAST_COMMIT_MESSAGE" value="operations with bool vector is not working" />
   </component>
 </project>

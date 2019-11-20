@@ -81,6 +81,17 @@ BoolVector::BoolVector(int len) {
 
 }
 
+BoolVector::BoolVector(BoolVector& sample){
+    lenb = sample.lenb;
+    lenw = sample.lenw;
+    arr = new unsigned int[lenw];
+
+    for (int i = 0; i < lenw; i++) {
+        int base = i / 32;
+        (arr)[base] = sample.arr[base];
+    }
+}
+
 void BoolVector::fillRandomly() {
     for (int i = 0; i < lenw; i++) {
         int base = i / 32;
@@ -177,38 +188,45 @@ void BoolVector::setBool(int i, int bit){
     }
 }
 
-BoolVector BoolVector::operator & (BoolVector obj) {
-    if ((this->lenb) != (obj.lenb)){
-        std::cout<<"throw ex"<<std::endl;
-        return BoolVector();
+
+BoolVector BoolVector::operator&(BoolVector &obj) {
+    if(lenb!=obj.lenb) {
+        std::cout << "error" << std::endl;
+        return *this;
     }
-    BoolVector temp(lenb);
-    for (int i = 0; i < lenw; i++) {
-        //int base = i / 32;
-        //int pos = i % 32;
-        (temp.arr)[i] = (this->arr[i] & obj.arr[i]);
+    //Log();
+    //obj.Log();
+    BoolVector res(lenb);
+    for(int i = 0;i<lenb;i++){
+        int base = i/32;
+        int pos = i%32;
+        //std::cout<<(TakeBool(base,pos)&obj.TakeBool(base,pos));
+        res.arr[base]|=(TakeBool(base,pos)&obj.TakeBool(base,pos))<<(31-pos);
     }
-    return temp;
+    //res.Log();
+    return res;
 }
 
-BoolVector BoolVector::operator & (BoolVector& obj) {
+void BoolVector::operator &= (BoolVector& obj) {
     if ((this->lenb) != (obj.lenb)){
         std::cout<<"throw ex"<<std::endl;
-        return BoolVector();
+        return;
+        //return BoolVector();
     }
-    BoolVector temp(lenb);
-    for (int i = 0; i < lenw; i++) {
+    //BoolVector temp(lenb);
+    for (int i = 0; i < lenw-1; i++) {
         //int base = i / 32;
         //int pos = i % 32;
-        (temp.arr)[i] = (this->arr[i] & obj.arr[i]);
+        arr[i] &= obj.arr[i];
     }
-    return temp;
+    //return temp;
 }
 
 BoolVector BoolVector::operator | (BoolVector& obj) {
     if ((this->lenb) != (obj.lenb)){
         std::cout<<"throw ex"<<std::endl;
-        return static_cast<BoolVector>(nullptr);
+        BoolVector BV;
+        return BV;
     }
     BoolVector temp(lenb);
     for (int i = 0; i < lenw; i++) {
@@ -223,16 +241,22 @@ void BoolVector::operator |= (BoolVector& obj) {
         //return *this;
     }
     BoolVector temp(lenb);
-    for (int i = 0; i < lenw; i++) {
-        arr[i] |= obj.arr[i];
+    for (int i = 0; i < lenb; i++) {
+        int base = i/32;
+        int pos = i%32;
+        temp.arr[base]|=(TakeBool(base,pos)|obj.TakeBool(base,pos))<<(31-pos);
+
     }
+    *this=temp;
     //return *this;
 }
 
 BoolVector BoolVector::operator ~ (){
     BoolVector temp(lenb);
     for(int i = 0; i<lenw; i++){
-        temp.arr[i]=~temp.arr[i];
+        int base = i/32;
+        int pos = i%32;
+        (temp.arr)[base]|=((TakeBool(base,pos)?(0<<(31-pos)):1<<(31-pos)));
     }
     return temp;
 }

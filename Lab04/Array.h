@@ -22,7 +22,6 @@ private:
     int *arr;
 
     void sift(int i, int n);
-    void heapChangeNums(int a,int n);
     void QuickSort(int l, int r);
     void RadixSort(int l, int r, int k);
 

@@ -2,16 +2,18 @@
 // Created by old_g on 19.10.2019.
 //
 
+#include <chrono>
 #include "Array.h"
+using namespace std::chrono;
 
-void Array::heapChangeNums(int a, int n){
-    if(arr[a]>arr[(a-1)/2]){
-        int temp = arr[a];
-        arr[a] = arr[(a-1)/2];
-        arr[(a-1)/2] = temp;
-        if((a-1)/2>0) heapChangeNums((a-1)/2,n);
-    }
+
+
+void Array::QuickSort(){
+    int r = size-1, l = 0;
+    QuickSort(l,r);
 }
+
+
 
 void Array::QuickSort(int l, int r){
     if(l>=r) return;
@@ -32,6 +34,19 @@ void Array::QuickSort(int l, int r){
     QuickSort(i,r);
 }
 
+
+
+void Array::RadixSort() {
+    unsigned int max = 0;
+    for (int i = 0; i < size; i++) if (arr[i] > max) max = arr[i];
+    int k = 0, r = size - 1, l = 0;
+    unsigned int tempmax = max;
+    while (tempmax != 0) tempmax = max >> ++k;
+    RadixSort(l, r, k);
+}
+
+
+
 void Array::RadixSort(int l, int r, int k){
     if(l>=r) return;
     if(k<=0) return;
@@ -51,6 +66,8 @@ void Array::RadixSort(int l, int r, int k){
     RadixSort(l,j,k-1);
     RadixSort(i,r,k-1);
 }
+
+
 
 void Array::CocktailSort(){
     int leftPoint = 0, rightPoint = size-1;
@@ -78,34 +95,13 @@ void Array::CocktailSort(){
     }
 }
 
+
+
 void Array::ShellSort(){
-    for(int p = size/2;p>0;p/=2){
-        for(int i = 0;i<p;i++){
-            for(int j = i+p; j<size;j+=p){
-                int k=j;
-                int temp = arr[k];
-                for(;k-p>=0&&arr[k-p]>temp;k-=p){
-                    arr[k] = arr[k-p];
-                }
-                arr[k] = temp;
-            }
-        }
-    }
+    for(int p = size/2;p>0;p/=2)    for(int i = 0;i<p;i++)  for(int j = i+p, k = j, temp = arr[k]; j<size;j+=p, arr[k] = temp)  for(;k-p>=0&&arr[k-p]>temp;k-=p)    arr[k] = arr[k-p];
 }
 
-void Array::RadixSort() {
-    unsigned int max = 0;
-    for (int i = 0; i < size; i++) if (arr[i] > max) max = arr[i];
-    int k = 0, r = size - 1, l = 0;
-    unsigned int tempmax = max;
-    while (tempmax != 0) tempmax = max >> ++k;
-    RadixSort(l, r, k);
-}
 
-void Array::QuickSort(){
-    int r = size-1, l = 0;
-    QuickSort(l,r);
-}
 
 void Array::HeapSort(){
     int n = size;
@@ -123,14 +119,12 @@ void Array::HeapSort(){
 
 
 void Array::sift(int i,int n) {
-    int max;
+    int max; //max - индекс максимального дочернего элемента
     int x = arr[i];
-    while((2*i+1)<=n) {
-        max = i*2+1;
-        if(i*2+2<n) {
-            if(arr[i*2+2]>arr[i*2+1]) max = i*2+2;
+    while((max = 2*i+1)<=n) {
+        if(max+1<=n) {
+            if(arr[max+1]>arr[max]) max+= 1;
         }
-
         if(x<arr[max]){
             arr[i] = arr[max];
             i=max;
