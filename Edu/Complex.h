@@ -4,19 +4,16 @@
 class Complex{
 private:
 
-    double a = 0;
-    double b = 0;
+    double a ;
+    double b ;
 
 public:
     static int k;
-    Complex(double a, double b){
+    Complex(double a=0, double b=0){
         this->a=a;
         this->b=b;
     }
 
-    Complex() {
-
-    }
 
     void Out() {
         std::cout<<this->a<<" + "<<this->b<<"i"<<std::endl;
