@@ -4,8 +4,8 @@
 class Complex{
 private:
 
-    double a;
-    double b;
+    double a = 0;
+    double b = 0;
 
 public:
     static int k;
