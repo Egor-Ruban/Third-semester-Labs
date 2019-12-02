@@ -1,8 +1,8 @@
 # Third-semester-Labs
 learning C++ with university laboratories
 requirments:
-*Lab01
-*Lab02
-*Lab03
-*Lab04
-*Lab05
+1) Lab01
+2) Lab02
+3) Lab03
+4) Lab04
+5) Lab05
