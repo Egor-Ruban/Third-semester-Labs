@@ -25,6 +25,49 @@ public:
         res.b = z1.b+z2.b;
         return res;
     }
+
+    Complex& operator=(const Complex& obj){
+        a = obj.a;
+        b = obj.b;
+        return *this;
+    }
+
+    Complex& operator+=(const Complex& obj){
+        a = a + obj.a;
+        b = b + obj.b;
+        return *this;
+    }
+
+    Complex operator+(const Complex& obj){
+        Complex res(a + obj.a, b + obj.b);
+        return res;
+    }
+
+    Complex& operator-=(const Complex& obj){
+        a = a - obj.a;
+        b = b - obj.b;
+        return *this;
+    }
+
+    Complex operator-(const Complex& obj){
+        Complex res(a - obj.a, b - obj.b);
+        return res;
+    }
+
+    friend std::istream& operator >> (std::istream &in, Complex& obj){
+        std::cout<<"== enter a: "<<std::endl;
+        in>>obj.a;
+        std::cout<<"== enter b: "<<std::endl;
+        in>>obj.b;
+        return in;
+    }
+
+    friend std::ostream& operator<<(std::ostream &out, const Complex &obj){
+        out<<obj.a<<"+"<<obj.b<<"i"<<std::endl;
+        return out;
+    }
+
+
     static Complex Sub(Complex z1, Complex z2){
         Complex res;
         res.a = z1.a-z2.a;
