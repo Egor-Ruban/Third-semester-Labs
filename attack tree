@@ -1,1 +1,37 @@
-<mxfile host="www.draw.io" modified="2019-12-14T12:10:18.200Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36" version="12.4.2" etag="QXR8CWnpDESU2Hrd1ejB" type="github"><diagram id="5HO97qABNQxCDWGfR_0T">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="www.draw.io" modified="2019-12-22T15:44:47.442Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36" etag="m1pwu7ZasVNSjAl_isrB" version="12.4.3" type="github" pages="1">
+  <diagram id="5HO97qABNQxCDWGfR_0T" name="Page-1">
+    <mxGraphModel dx="1038" dy="499" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="dCs0-lnMbEMwFIn5TV46-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="dCs0-lnMbEMwFIn5TV46-1" target="dCs0-lnMbEMwFIn5TV46-4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="dCs0-lnMbEMwFIn5TV46-1" value="&amp;nbsp;Получение доступа к почте" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="200" y="40" width="440" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="dCs0-lnMbEMwFIn5TV46-3" value="mail.ru&lt;br&gt;сосед по комнате" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="20" y="80" width="100" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="dCs0-lnMbEMwFIn5TV46-4" value="сменить пароль от аккаунта" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="370" y="120" width="100" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="dCs0-lnMbEMwFIn5TV46-5" value="узнать пароль от аккаунта" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="200" y="120" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="dCs0-lnMbEMwFIn5TV46-6" value="получить введенный пароль на своем устройстве" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="520" y="120" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="dCs0-lnMbEMwFIn5TV46-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.7;exitY=0.1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="dCs0-lnMbEMwFIn5TV46-14" target="dCs0-lnMbEMwFIn5TV46-6">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="dCs0-lnMbEMwFIn5TV46-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.7;exitY=0.9;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="dCs0-lnMbEMwFIn5TV46-14" target="dCs0-lnMbEMwFIn5TV46-5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="dCs0-lnMbEMwFIn5TV46-14" value="" style="shape=xor;whiteSpace=wrap;html=1;rotation=90;" vertex="1" parent="1">
+          <mxGeometry x="415" y="80" width="10" height="20" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
